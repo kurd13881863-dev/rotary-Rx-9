@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#080c12">
+  <meta name="description" content="Simulator Rx-9 — interactive 3D rotary engine simulator">
+  <link rel="icon" type="image/png" href="icons/rx9-192.png">
+  <link rel="apple-touch-icon" href="icons/rx9-512.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="style.css">
+  <title>Simulator Rx-9</title>
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <div class="brand">
+      <img class="brand-icon" src="icons/rx9-192.png" alt="Simulator Rx-9 icon">
+      <div><h1>SIMULATOR RX-9</h1><p>ROTARY ENGINE LAB · WANKEL ENGINE SIMULATOR</p></div>
+    </div>
+    <div class="status"><span class="status-dot"></span><span id="engineStatus">ENGINE READY</span></div>
+  </header>
+  <main>
+    <section class="engine-section">
+      <div class="section-heading"><div><h2>3D ENGINE MODEL</h2><p>Two-Rotor Rotary Engine</p></div><span class="live-badge">LIVE SIMULATION</span></div>
+      <div id="viewport"><div id="loading"><div class="loader"></div><p>INITIALIZING ENGINE...</p></div></div>
+      <div class="camera-hint">TOUCH AND DRAG TO ROTATE · PINCH TO ZOOM</div>
+    </section>
+    <section class="control-panel">
+      <div class="panel-title"><h2>ENGINE CONTROL</h2><span class="panel-indicator">CONTROL UNIT</span></div>
+      <div class="rpm-display"><div class="rpm-label">ENGINE SPEED</div><div class="rpm-number"><span id="rpmValue">850</span><small>RPM</small></div><div class="rpm-track"><div id="rpmBar"></div></div></div>
+      <div class="slider-section"><div class="slider-heading"><label for="rpmSlider">TARGET RPM</label><span id="sliderValue">850 RPM</span></div><input type="range" id="rpmSlider" min="500" max="8000" value="850" step="50"><div class="slider-limits"><span>500 RPM</span><span>8000 RPM</span></div></div>
+      <div class="button-row"><button id="startBtn" class="start-button">▶ START ENGINE</button><button id="stopBtn" class="stop-button">■ STOP ENGINE</button></div>
+    </section>
+    <section class="data-panel"><div class="panel-title"><h2>ENGINE TELEMETRY</h2><span class="panel-indicator">REAL TIME</span></div>
+      <div class="data-grid">
+        <div class="data-card"><span>OUTPUT SHAFT</span><strong id="crankSpeed">850 RPM</strong></div>
+        <div class="data-card"><span>ROTOR SPEED</span><strong id="camSpeed">283 RPM</strong></div>
+        <div class="data-card"><span>SHAFT ANGLE</span><strong id="angle">000</strong><small>DEG</small></div>
+        <div class="data-card"><span>SIMULATION TIME</span><strong id="simTime">00:00</strong></div>
+        <div class="data-card"><span>ENGINE LOAD</span><strong id="load">11%</strong></div>
+        <div class="data-card"><span>IGNITION</span><strong id="ignitionStatus">ACTIVE</strong></div>
+        <div class="data-card"><span>COMBUSTION</span><strong id="combustionStatus">SIMULATING</strong></div>
+        <div class="data-card"><span>ENGINE STATE</span><strong id="stateText">RUNNING</strong></div>
+      </div>
+    </section>
+  </main>
+  <footer>SIMULATOR RX-9 · ROTARY ENGINE SIMULATION</footer>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

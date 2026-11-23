@@ -1,0 +1,57 @@
+{ box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #080c12; color: #e9f0f7; font-family: Arial, sans-serif; min-height: 100vh; }
+.app { width: 100%; max-width: 1100px; margin: auto; padding: 14px; }
+.topbar { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 16px; background: #111923; border: 1px solid #263442; border-radius: 12px; }
+.brand { display: flex; align-items: center; gap: 12px; }
+.brand-icon { display: grid; place-items: center; width: 45px; height: 45px; border-radius: 10px; background: #d64c25; color: white; font-weight: 900; font-size: 19px; }
+.brand h1 { font-size: 15px; letter-spacing: 1.5px; }
+.brand p { color: #8293a4; font-size: 9px; margin-top: 5px; letter-spacing: 1.5px; }
+.status { display: flex; align-items: center; gap: 7px; font-size: 9px; color: #42df91; }
+.status-dot { width: 8px; height: 8px; border-radius: 50%; background: #42df91; box-shadow: 0 0 10px #42df91; }
+main { display: flex; flex-direction: column; gap: 14px; margin-top: 15px; }
+.engine-section, .control-panel, .data-panel { background: #111923; border: 1px solid #263442; border-radius: 12px; padding: 15px; }
+.section-heading, .panel-title { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 14px; }
+.section-heading h2, .panel-title h2 { font-size: 13px; letter-spacing: 1px; }
+.section-heading p { color: #8293a4; font-size: 10px; margin-top: 5px; }
+.live-badge, .panel-indicator { color: #ff815c; font-size: 9px; letter-spacing: 1px; }
+#viewport { width: 100%; height: 380px; position: relative; overflow: hidden; border-radius: 9px; background: radial-gradient(circle, #182633, #080c12 75%); border: 1px solid #263442; }
+#viewport canvas { display: block; width: 100%; height: 100%; }
+#loading { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 13px; color: #a9b8c7; font-size: 10px; letter-spacing: 2px; z-index: 2; }
+.loader { width: 35px; height: 35px; border: 3px solid #344453; border-top-color: #ff6035; border-radius: 50%; animation: spin 1s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.camera-hint { text-align: center; color: #718396; font-size: 9px; margin-top: 12px; letter-spacing: 1px; }
+.rpm-display { padding: 17px; background: #0b121b; border: 1px solid #273747; border-radius: 9px; }
+.rpm-label { color: #8799aa; font-size: 10px; letter-spacing: 1.5px; }
+.rpm-number { margin: 8px 0 15px; display: flex; align-items: baseline; gap: 8px; }
+.rpm-number span { font-size: 43px; font-weight: bold; color: #ff7047; font-variant-numeric: tabular-nums; }
+.rpm-number small { color: #94a5b5; font-size: 12px; }
+.rpm-track { width: 100%; height: 7px; border-radius: 10px; background: #263442; overflow: hidden; }
+#rpmBar { width: 10%; height: 100%; background: linear-gradient(90deg, #ff9a45, #ff4c35); border-radius: 10px; transition: width 0.15s; }
+.slider-section { margin-top: 20px; }
+.slider-heading { display: flex; justify-content: space-between; color: #aab8c5; font-size: 11px; margin-bottom: 13px; }
+#sliderValue { color: #ff815c; }
+#rpmSlider { width: 100%; accent-color: #ff6035; cursor: pointer; }
+.slider-limits { display: flex; justify-content: space-between; color: #718396; font-size: 9px; margin-top: 7px; }
+.button-row { display: flex; gap: 10px; margin-top: 22px; }
+.button-row button { flex: 1; min-height: 45px; border: none; border-radius: 7px; font-size: 10px; font-weight: bold; cursor: pointer; }
+.start-button { background: #176b49; color: white; }
+.stop-button { background: #7c302b; color: white; }
+.button-row button:active { transform: scale(0.97); }
+.data-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
+.data-card { background: #0b121b; border: 1px solid #263442; border-radius: 8px; padding: 13px 10px; min-width: 0; }
+
+.data-card span { display: block; color: #8192a3; font-size: 9px; margin-bottom: 9px; letter-spacing: 0.5px; }
+.data-card strong { color: #e6edf5; font-size: 16px; overflow-wrap: anywhere; }
+.data-card small { color: #8192a3; font-size: 9px; }
+#stateText { color: #42df91; }
+footer { text-align: center; color: #607285; font-size: 9px; letter-spacing: 1px; padding: 20px 5px; }
+@media (max-width: 480px) { .app { padding: 9px; }
+#viewport { height: 320px; }
+.brand h1 { font-size: 12px; }
+.status { font-size: 8px; }
+.rpm-number span { font-size: 37px; } }
+html {
+  height: 100%;
+  background: 50% 50% no-repeat
+    url('data:image/svg+xml,<svg viewBox="-20 -5 60 40" width="140" xmlns="http://www.w3.org/2000/svg" opacity="0.2"><path d="M1 8l11-7 11 7v8l-11 7-11-7zm0 0l11 8 11-8m0 8L12 8 1 16M12 1v7m0 8v7" fill="none" stroke="currentColor" stroke-linejoin="round" stroke-width="2"/><text x="-12" y="32" font-size="5" font-family="monospace" fill="currentColor">Built on CodePen</text></svg>');
+}
